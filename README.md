@@ -51,7 +51,7 @@ conda activate lanedet
 ```Shell
 # Install pytorch firstly, the cudatoolkit version should be same in your system.
 
-conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
 # Or you can install via pip
 pip install torch torchvision
