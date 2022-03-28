@@ -25,6 +25,8 @@ class Detect(object):
 
     def preprocess(self, img_path):
         ori_img = cv2.imread(img_path)
+        ori_img = ori_img[:(2*ori_img.shape[0])//3,...]
+        ori_img = cv2.resize(ori_img, (self.cfg.ori_img_w, self.cfg.ori_img_h)) # <-Add this
         img = ori_img[self.cfg.cut_height:, :, :].astype(np.float32)
         data = {'img': img, 'lanes': []}
         data = self.processes(data)
